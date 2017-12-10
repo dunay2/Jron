@@ -9,7 +9,7 @@
 {
     private static final double INFINITO=Double.MAX_VALUE;
     private final double weight; // peso
-    private final int index; // peso
+    private final int index;
     private final String name;
     private final String cellType;
     // instance variables

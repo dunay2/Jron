@@ -240,7 +240,7 @@ import java.util.*;
                         if (childNode.getCellType().equals("Exit")) {
 
                             debug.print("He encontrado una salida!", 0);
-                            debug.print("Tiempo en dijsktra:" + (System.currentTimeMillis() - t1) + "ms", 0);
+                            debug.print("Tiempo en dijkstra:" + (System.currentTimeMillis() - t1) + "ms", 0);
                             hasSolution = true;
                             return this;
                         }
