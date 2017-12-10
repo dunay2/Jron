@@ -37,102 +37,11 @@ class QueueGraph2 {
 
        /*Inicializamos la lista de nodos y su valor transformando la lista de cadenas recibida por parámetro en el constructor
        en valores de los elementos de la lista de nodos*/
-        convertToNode(matrixValues);
+        //convertToNode(matrixValues);
 
         debug = new Debug();
     }
 
-    //Propósito: Agregar los elementos del arraylist leído en fichero en una lista de objetos nodo del grafo
-    private void convertToNode(ArrayList<String> matrixValues) {
-
-        //roomType indica la tipología de la celda de la matriz
-        String strFileLine = "", roomType = "";
-
-        Iterator<String> it = matrixValues.iterator();//Iterador para recorrer todos los elementos del arraylist
-        int row, column, contador, exitCount = 0, roboCount = 0, obstacleCount = 0;
-        double currentWeigth = 0;
-        // Para todos los elementos desde 0 hasta tamaño lista
-        for (contador = 0; contador < (height * width); contador++) {
-            // evaluar el tipo de datos que nos está llegando. Si es Obstáculo, Número, Robot o Salida.
-            try {
-                roomType = "";
-
-                //Guardamos la string para el caso de que no sea numérico
-                currentWeigth = Integer.parseInt(strFileLine = it.next());
-                if (currentWeigth < 0) {
-                    System.out.println("El sistema no soporta casillas con valor negativo");
-                    System.exit(-1);
-                }
-                if (currentWeigth >= INFINITO) {
-                    System.out.println("Error. Se ha superado el valor máximo coste de una casilla");
-                    System.exit(-1);
-                }
-
-            } catch (Exception exc) {
-                switch (strFileLine) {
-                    case "O": // Obstáculo infranqueable
-                        currentWeigth = INFINITO;
-                        roomType = "Obstacle";
-                        obstacleCount++;
-                        break;
-
-                    case "R": //inicio
-                        currentWeigth = 0;
-                        roomType = "Robot";
-                        originNode = contador;
-                        roboCount++;
-                        break;
-
-                    case "S": //salida
-
-                        currentWeigth = 0;
-                        roomType = "Exit";
-                        //indicamos la posicion de la salida en la lista
-                        exitNode = contador;
-                        exitCount++;
-                        break;
-
-                    default:
-
-                    {
-                        System.out.println("El sistema no soporta casillas con caracteres desconocidos");
-                        System.exit(-1);
-                    }
-                    currentWeigth = 0;
-                    roomType = "Obstacle";
-                }
-            } finally {
-                //Agregamos el nodo al grafo
-                //peso, nombre i, tipo
-
-                row = contador / width + 1;
-                column = contador % width + 1;
-
-                //comprobamos que la salida esté en un borde
-                if (roomType.equals("Exit")) {
-                    if (!(row == 1 || row == height || column == 1 || column == width)) {
-                        System.out.println("La salida no se encuentra en una de las casillas periféricas de la matriz");
-                        System.exit(-1);
-                    }
-                }
-
-                MatrixNodeList.add(new LightNode(contador, currentWeigth, roomType + "[" + row + "," + column + "]", roomType));
-
-            }
-        }
-        //restricciones
-        if (exitCount == 0 || exitCount > 1 || roboCount == 0 || roboCount > 1 || obstacleCount == 0
-                || contador != (height * width)
-                ) {
-            System.out.println("Los valores de entrada no son correctos");
-            System.out.println("Cantidad de entradas: " + roboCount);
-            System.out.println("Cantidad de salidas: " + exitCount);
-            System.out.println("Cantidad de obstáculos: " + obstacleCount);
-
-            System.exit(-1);
-        }
-
-    }
 
     //Propósito: Obtener los elementos adyacentes a un indice de una matriz
     //La función recibe un indice de un array unidimensional y lo transforma a un elemento de una matriz
