@@ -1,15 +1,11 @@
-/**
- * La clase QueueGraph define la matriz que vamos a crear donde se guardan los nodos y sus valores.
- * Debe ser el robot
- *
- * @author Diego Javier Rios Sanchez
+/*
+  La clase QueueGraph define la matriz que vamos a crear donde se guardan los nodos y sus valores.
+  Debe ser el robot
+
+  @author Diego Javier Rios Sanchez
  * @version 1.0 20171014
  */
-/* falta validar matriz incorrecta
-por tamaño
-por falta de entrada, obstaculo o salida
-por valor de entrada no valido: otras letras, valores no numericos
- */
+
 
 import java.util.*;
 
