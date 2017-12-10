@@ -13,7 +13,7 @@ import java.util.*;
 class QueueGraph2 {
     private static final double INFINITO = Double.MAX_VALUE;
     //Propósito: Tener una cola de prioridad ordenada para gestionar los candidatos según su cercanía al origen
-   // private static final Comparator<LightNode> LengthComp = Comparator.comparingDouble(LightNode::getLength);
+    private static final Comparator<LightNode> LengthComp = Comparator.comparingDouble(LightNode::getLength);
     // instance variables -
     private final int width; // Ancho matriz. cantidad columnas
     private final int height; //Alto matriz cantidad filas
