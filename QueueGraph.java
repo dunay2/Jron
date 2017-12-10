@@ -1,14 +1,12 @@
 /*
-  La clase QueueGraph define la matriz que vamos a crear donde se guardan los nodos y sus valores.
-  Debe ser el robot
+La clase QueueGraph define la matriz que vamos a crear donde se guardan los nodos y sus valores.
+Debe ser el robot
 
-  @author Diego Javier Rios Sanchez
+@author Diego Javier Rios Sanchez
  * @version 1.0 20171014
  */
 
-
 import java.util.*;
-
 public class QueueGraph {
     private static final double INFINITO = Double.MAX_VALUE;
     //Propósito: Tener una cola de prioridad ordenada para gestionar los candidatos según su cercanía al origen
@@ -109,7 +107,7 @@ public class QueueGraph {
                 column = contador % width + 1;
 
                 //comprobamos que la salida esté en un borde
-                if (roomType == "Exit") {
+                if (roomType.equals("Exit")) {
                     if (!(row == 1 || row == height || column == 1 || column == width)) {
                         System.out.println("La salida no se encuentra en una de las casillas periféricas de la matriz");
                         System.exit(-1);
@@ -128,7 +126,6 @@ public class QueueGraph {
             System.out.println("Cantidad de entradas: " + roboCount);
             System.out.println("Cantidad de salidas: " + exitCount);
             System.out.println("Cantidad de obstáculos: " + obstacleCount);
-
 
             System.exit(-1);
         }
@@ -258,7 +255,7 @@ public class QueueGraph {
     public List<String> showExit() {
         List<String> str = new ArrayList<>();
         LightNode allWayNode = MatrixNodeList.get(exitNode);
-        String auxStr = "";
+        StringBuilder auxStr = new StringBuilder();
         //Si el algoritmo tiene solución la mostramos
         if (hasSolution) {
             while ((allWayNode = allWayNode.getFather()) != null) {
@@ -266,10 +263,10 @@ public class QueueGraph {
 
                 str.add(allWayNode.getName());
 
-                auxStr = allWayNode.getName() + "," + auxStr;
+                auxStr.insert(0, allWayNode.getName() + ",");
             }
-            auxStr = auxStr + MatrixNodeList.get(exitNode).getName();
-            debug.print(auxStr, 0);
+            auxStr.append(MatrixNodeList.get(exitNode).getName());
+            debug.print(auxStr.toString(), 0);
             debug.print("Energía consumida: " + MatrixNodeList.get(exitNode).getLength(), 0);
         } else {
             debug.print("El problema no tiene solución", 0);
