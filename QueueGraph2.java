@@ -13,7 +13,7 @@ import java.util.*;
 class QueueGraph2 {
     private static final double INFINITO = Double.MAX_VALUE;
     //Propósito: Tener una cola de prioridad ordenada para gestionar los candidatos según su cercanía al origen
-    private static final Comparator<LightNode> LengthComp = Comparator.comparingDouble(LightNode::getLength);
+   // private static final Comparator<LightNode> LengthComp = Comparator.comparingDouble(LightNode::getLength);
     // instance variables -
     private final int width; // Ancho matriz. cantidad columnas
     private final int height; //Alto matriz cantidad filas
@@ -102,7 +102,7 @@ class QueueGraph2 {
         debug.print("La distancia desde origen a origen se establece en 0", 1);
 
         //Creamos una cola de prioridad para gestionar los candidatos ordenados por cercanía al origen
-        Queue<LightNode> candidatepq = new PriorityQueue<>(3000, LengthComp);
+        Queue<LightNode> candidatepq = new PriorityQueue<>(3000);
 
         //Establecemos el origen como primer candidato y lo agregamos a la cola
         candidatepq.add(activeNode);
