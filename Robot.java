@@ -1,7 +1,7 @@
-/**
- * Clase que gestiona y hace de controladora del proyecto.
- *
- * @author Diego Javier Ríos Sánchez
+/*
+  Clase que gestiona y hace de controladora del proyecto.
+
+  @author Diego Javier Ríos Sánchez
  * @version 0.3 20171028
  */
 

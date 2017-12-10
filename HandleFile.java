@@ -1,7 +1,7 @@
-/**
- * Proposito: Leer y escribir archivos
- *
- * @author (Diego Javier Rios Sanchez)
+/*
+  Proposito: Leer y escribir archivos
+
+  @author (Diego Javier Rios Sanchez)
  * @version (0.91 20171028)
  */
 
@@ -61,9 +61,9 @@ class HandleFile
     /**
      * Propósito: devolver en un arraylist de string las líneas de un fichero leído
      *
-     * @param  file_io_path  valor String que establece el path del fichero de entrada
+     * param  file_io_path  valor String que establece el path del fichero de entrada
      * en el atributo privado _out_file
-     * @return     ArrayList<String>
+     * return     ArrayList<String>
      */
 
     public  ArrayList<String> getMatrix()

@@ -9,7 +9,8 @@ Debe ser el robot
  */
 
 import java.util.*;
-public class QueueGraph {
+
+ class QueueGraph {
     private static final double INFINITO = Double.MAX_VALUE;
     //Propósito: Tener una cola de prioridad ordenada para gestionar los candidatos según su cercanía al origen
     private static final Comparator<LightNode> LengthComp = Comparator.comparingDouble(LightNode::getLength);
@@ -28,7 +29,7 @@ public class QueueGraph {
      * recibe tamaño de matriz fila x columna y un ArraList de cadenas con los valores de los elementos de la matriz
      *
      */
-    public QueueGraph(int height, int width, ArrayList<String> matrixValues) {
+     QueueGraph(int height, int width, ArrayList<String> matrixValues) {
 
         this.width = width;
         this.height = height;

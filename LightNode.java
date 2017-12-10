@@ -5,7 +5,7 @@
  * @version (0.2 20171027)
  */
 
-public class LightNode
+ class LightNode
 {
     private static final double INFINITO=Double.MAX_VALUE;
     private final double weight; // peso
